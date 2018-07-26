@@ -8,6 +8,7 @@
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // ensure these codes start after the highest keycode defined in Quantum
   VRSN,
+  SHRUG,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -39,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           KC_BSPC,         KC_A,           KC_S,     KC_D,     KC_F,  KC_G,
           KC_LSFT,  CTL_T(KC_Z),           KC_X,     KC_C,     KC_V,  KC_B,
   LT(SYMB,KC_GRV),      KC_QUOT,  LALT(KC_LSFT),  KC_LEFT,  KC_RGHT,
-                                                                      ALT_T(KC_APP),  KC_LGUI,
+                                                                      ALT_T(KC_APP),  LM(MDIA, 0x08),
                                                                                       KC_HOME,
                                                              KC_SPC,        KC_BSPC,   KC_END,
         // right hand
@@ -47,11 +48,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                              KC_Y,   KC_U,     KC_I,     KC_O,               KC_P,         KC_BSLS,
                              KC_H,   KC_J,     KC_K,     KC_L,  LT(MDIA, KC_SCLN),  GUI_T(KC_QUOT),
                              KC_N,   KC_M,  KC_COMM,   KC_DOT,     CTL_T(KC_SLSH),         KC_RSFT,
-                                    KC_UP,  KC_DOWN,  KC_LBRC,            KC_RBRC,          KC_FN1,
+                                    KC_UP,  KC_DOWN,  KC_LBRC,            KC_RBRC,          MO(1),
           KC_RALT,  CTL_T(KC_ESC),
           KC_PGUP,
           KC_PGDN, KC_TAB, KC_ENT
     ),
+// LM(2, KC_LGUI)
+// Must use the hex code for KC_LGUI:1⁄
+// LM(MDIA, 0x08)
+// 
+// MO(1) Shift to Layer 1 while held
 /* Keymap 1: Symbol Layer
  *
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -77,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [SYMB] = LAYOUT_dactyl(
        // left hand
           VRSN,    KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,
-       KC_TRNS,  KC_EXLM,    KC_AT,  KC_LCBR,  KC_RCBR,  KC_PIPE,
+       SHRUG,  KC_EXLM,    KC_AT,  KC_LCBR,  KC_RCBR,  KC_PIPE,
        KC_TRNS,  KC_HASH,   KC_DLR,  KC_LPRN,  KC_RPRN,   KC_GRV,
        KC_TRNS,  KC_PERC,  KC_CIRC,  KC_LBRC,  KC_RBRC,  KC_TILD,
          RESET,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
@@ -116,24 +122,80 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *
  */
 // MEDIA AND MOUSE
+// 
+// LGUI(KC_LEFT)
+// 
 [MDIA] = LAYOUT_dactyl(
-       KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
-       KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_MS_U,  KC_TRNS,  KC_TRNS,
-       KC_TRNS,  KC_TRNS,  KC_MS_L,  KC_MS_D,  KC_MS_R,  KC_TRNS,
-       KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
-       KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_BTN1,  KC_BTN2,
-                                                         KC_TRNS,  KC_TRNS,
-                                                                   KC_TRNS,
-                                               KC_TRNS,  KC_TRNS,  KC_TRNS,
-    // right hand
-                KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
-                KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
-                KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_MPLY,
-                KC_TRNS,  KC_TRNS,  KC_MPRV,  KC_MNXT,  KC_TRNS,  KC_TRNS,
-                          KC_VOLU,  KC_VOLD,  KC_MUTE,  KC_TRNS,  KC_TRNS,
-      KC_TRNS,  KC_TRNS,
-      KC_TRNS,
-      KC_TRNS,  KC_TRNS,  KC_WBAK
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_LSFT,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_LGUI,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_UP,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_LEFT,
+  KC_DOWN,
+  KC_RGHT,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO,
+  KC_NO
 ),
 };
 
@@ -164,6 +226,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case VRSN:
       if (record->event.pressed) {
         SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
+      }
+      return false;
+      break;
+    case SHRUG:
+      if (record->event.pressed) {
+        SEND_STRING ("¯\\_(ツ)_/¯");
       }
       return false;
       break;

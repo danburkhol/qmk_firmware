@@ -49,7 +49,7 @@ static const uint8_t onboard_row_pins[MATRIX_ROWS] = MATRIX_ONBOARD_ROW_PINS;
 static const uint8_t onboard_col_pins[MATRIX_COLS] = MATRIX_ONBOARD_COL_PINS;
 static const bool col_expanded[MATRIX_COLS] = COL_EXPANDED;
 static const uint8_t expander_row_pins[MATRIX_ROWS] = MATRIX_EXPANDER_ROW_PINS;
-static const uint8_t expander_col_pins[MATRIX_COLS] = MATRIX_EXPANDER_COL_PINS;
+// static const uint8_t expander_col_pins[MATRIX_COLS] = MATRIX_EXPANDER_COL_PINS;
 #endif
 
 /* matrix state(1:on, 0:off) */
@@ -139,6 +139,7 @@ void matrix_init(void)
 #endif
 
     matrix_init_quantum();
+    debug_enable = true;
 }
 
 void init_expander(void) {
